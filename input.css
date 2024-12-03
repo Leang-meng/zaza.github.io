@@ -1,0 +1,65 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+  .icon-menu {
+    @apply block bg-[url(../public/menu-11-stroke-rounded.svg)] bg-no-repeat;
+    width: 28px;
+    height: 28px;
+  }
+
+  input[type="checkbox"]:checked + .icon-menu {
+    @apply block bg-[url(../public/cancel-01-stroke-rounded.svg)];
+    font-size: 5px;
+  }
+
+  input[type="checkbox"]:checked ~ nav {
+    @apply flex;
+  }
+  .banner-backgornd{
+    @apply block bg-[url(../public/hero.jpg)] lg:bg-fixed;
+  }
+  .baner-backgornd{
+    @apply block bg-[url(../public/bg-03.jpg)] lg:bg-fixed;
+  }
+  .baner-background2{
+    @apply block bg-[url(../public/bg-001.jpg)] ;
+  }
+  .baner-background1{
+    @apply block bg-[url(../public/photo_2024-11-27_18-36-03.jpg)] ;
+  }
+  .slider {
+    @apply py-2;
+    width: 100%;
+    height: 15vh;
+    display: flex;
+    gap: 20px;
+    overflow-x: scroll;
+
+    &::-webkit-scrollbar {
+      @apply hidden;
+    }
+
+    & .card-slide {
+      @apply px-2 py-1;
+      aspect-ratio: 24 / 10;
+      border: 1px solid #f7d6dc;
+      display: flex;
+      place-content: center;
+      place-items: center;
+    }
+  }
+  .box-product:hover .add-to-cart {
+    @apply block;
+}
+
+.add-to-cart:hover + .label {
+    @apply block;
+}
+
+}
+a:hover img {
+  filter: brightness(0) saturate(100%) invert(30%) sepia(50%) saturate(500%) hue-rotate(100deg);
+ 
+}
